@@ -1,0 +1,6 @@
+{
+  "name": "سما كابيتال للاستيراد والشحن | Sama Capital Import & Logistics",
+  "description": "شركة سما كابيتال للاستيراد - بوابتك الموثوقة للاستيراد التجاري من الصين إلى اليمن. شحن بحري وجوي، تخليص جمركي، فحص جودة وتتبع فوري للشحنات.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
