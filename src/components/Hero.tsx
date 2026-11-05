@@ -67,21 +67,21 @@ export const Hero: React.FC<HeroProps> = ({
       </div>
 
       {/* Main Content Area */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-16 lg:pt-20 lg:pb-24">
+      <div className="relative z-10 max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 pt-8 pb-12 sm:pt-16 sm:pb-16 lg:pt-20 lg:pb-24">
         
         {/* Top Text Group */}
-        <div className="max-w-3xl mb-10">
+        <div className="max-w-3xl mb-8 sm:mb-10">
           {/* Subtle quiet text kicker */}
-          <div className="inline-flex items-center gap-2 text-xs font-semibold text-amber-400 mb-3 tracking-wide">
-            <Compass className="w-4 h-4 text-amber-400" />
-            <span>{t('heroBadge')}</span>
+          <div className="inline-flex items-center gap-2 text-xs font-semibold text-amber-400 mb-2.5 tracking-wide">
+            <Compass className="w-4 h-4 text-amber-400 shrink-0" />
+            <span className="line-clamp-1">{t('heroBadge')}</span>
           </div>
 
           {/* Main Hero Headline */}
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight mb-5">
+          <h1 className="text-2xl xs:text-3xl sm:text-4xl lg:text-6xl font-extrabold tracking-tight text-white leading-snug sm:leading-tight mb-4 sm:mb-5">
             {language === 'ar' ? (
               <>
-                بوابتك الاحترافية للاستيراد من <span className="text-amber-400 underline decoration-amber-500/50 decoration-wavy underline-offset-8">الصين</span> والشحن الآمن إلى <span className="text-amber-400">اليمن</span>
+                بوابتك الاحترافية للاستيراد من <span className="text-amber-400 underline decoration-amber-500/50 decoration-wavy underline-offset-4 sm:underline-offset-8">الصين</span> والشحن الآمن إلى <span className="text-amber-400">اليمن</span>
               </>
             ) : (
               <>
@@ -91,7 +91,7 @@ export const Hero: React.FC<HeroProps> = ({
           </h1>
 
           {/* Hero Subtitle */}
-          <p className="text-sm sm:text-base text-slate-300 font-normal leading-relaxed max-w-2xl">
+          <p className="text-xs sm:text-base text-slate-300 font-normal leading-relaxed max-w-2xl">
             {t('heroSubtitle')}
           </p>
         </div>

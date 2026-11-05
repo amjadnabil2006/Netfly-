@@ -57,27 +57,27 @@ export const ClientPortalModal: React.FC<ClientPortalModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md overflow-y-auto">
-      <div className="relative w-full max-w-4xl bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-2xl overflow-hidden my-6 animate-in fade-in zoom-in-95 duration-200">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-950/80 backdrop-blur-md overflow-y-auto">
+      <div className="relative w-full max-w-4xl bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-2xl overflow-hidden my-4 sm:my-6 animate-in fade-in zoom-in-95 duration-200">
         
         {/* Modal Top Header */}
-        <div className="p-6 bg-slate-950 text-white flex items-center justify-between border-b border-slate-800">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-amber-500 text-slate-950 flex items-center justify-center font-bold shadow-md">
+        <div className="p-4 sm:p-6 bg-slate-950 text-white flex items-center justify-between border-b border-slate-800">
+          <div className="flex items-center gap-2.5 sm:gap-3 min-w-0">
+            <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-amber-500 text-slate-950 flex items-center justify-center font-bold shadow-md shrink-0">
               <User className="w-5 h-5" />
             </div>
-            <div>
-              <h3 className="text-lg font-bold">
-                بوابة المستورد ورجال الأعمال · Client Consignment Portal
+            <div className="min-w-0">
+              <h3 className="text-base sm:text-lg font-bold truncate">
+                بوابة المستورد ورجال الأعمال
               </h3>
-              <p className="text-xs text-slate-400">
-                متابعة وإدارة كافة شحناتك وبوالص الشحن والفواتير الجمركية المعتمدة
+              <p className="text-[11px] sm:text-xs text-slate-400 line-clamp-1">
+                متابعة شحناتك وبوالص الشحن والفواتير الجمركية
               </p>
             </div>
           </div>
           <button
             onClick={onClose}
-            className="p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors"
+            className="p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors shrink-0"
           >
             <X className="w-5 h-5" />
           </button>

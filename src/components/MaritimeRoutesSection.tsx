@@ -241,8 +241,71 @@ export const MaritimeRoutesSection: React.FC<MaritimeRoutesSectionProps> = ({
             </div>
           </div>
 
-          {/* Responsive Schedules Table */}
-          <div className="overflow-x-auto">
+          {/* Mobile Card View (md:hidden) */}
+          <div className="md:hidden space-y-3">
+            {filteredSchedules.map((sch) => (
+              <div 
+                key={sch.id}
+                className="p-4 rounded-xl bg-slate-900 border border-slate-800 space-y-3 shadow-sm"
+              >
+                {/* Header: Vessel & Status */}
+                <div className="flex items-center justify-between border-b border-slate-800/80 pb-2.5">
+                  <div className="flex items-center gap-2">
+                    <div className="w-8 h-8 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center border border-amber-500/20">
+                      <Ship className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <span className="font-bold text-white text-xs block">{sch.vesselName}</span>
+                      <span className="text-[10px] text-slate-400 font-mono">{sch.voyageNumber}</span>
+                    </div>
+                  </div>
+                  <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+                    {sch.status === 'booking_open' ? 'الحجز مفتوح' : 'المقاعد محدودة'}
+                  </span>
+                </div>
+
+                {/* Ports Route */}
+                <div className="grid grid-cols-2 gap-2 text-xs">
+                  <div className="p-2 rounded-lg bg-slate-950/60 border border-slate-800/60">
+                    <span className="text-[10px] text-slate-400 block mb-0.5">{t('scheduleColOrigin')}</span>
+                    <span className="font-bold text-slate-200">{language === 'ar' ? sch.originPortAr : sch.originPortEn}</span>
+                  </div>
+                  <div className="p-2 rounded-lg bg-slate-950/60 border border-slate-800/60">
+                    <span className="text-[10px] text-slate-400 block mb-0.5">{t('scheduleColDest')}</span>
+                    <span className="font-bold text-amber-400">{language === 'ar' ? sch.destinationPortAr : sch.destinationPortEn}</span>
+                  </div>
+                </div>
+
+                {/* Sailing Dates */}
+                <div className="grid grid-cols-3 gap-1.5 text-[11px] font-mono text-center pt-1 border-t border-slate-800/60">
+                  <div>
+                    <span className="text-[10px] text-slate-500 block">إغلاق الشحن</span>
+                    <span className="text-rose-400 font-bold">{sch.cargoCutoff}</span>
+                  </div>
+                  <div>
+                    <span className="text-[10px] text-slate-500 block">الإبحار (ETD)</span>
+                    <span className="text-slate-300">{sch.etd}</span>
+                  </div>
+                  <div>
+                    <span className="text-[10px] text-slate-500 block">الوصول (ETA)</span>
+                    <span className="text-emerald-400 font-bold">{sch.eta}</span>
+                  </div>
+                </div>
+
+                {/* Action button */}
+                <button
+                  onClick={() => onBookSchedule(sch)}
+                  className="w-full py-2.5 rounded-lg bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-slate-950 font-bold text-xs shadow-sm active:scale-95 transition-transform flex items-center justify-center gap-1.5 cursor-pointer"
+                >
+                  <Ship className="w-4 h-4" />
+                  <span>حجز مساحة على هذه الرحلة</span>
+                </button>
+              </div>
+            ))}
+          </div>
+
+          {/* Desktop Schedules Table (hidden md:block) */}
+          <div className="hidden md:block overflow-x-auto">
             <table className="w-full text-xs text-start">
               <thead>
                 <tr className="border-b border-slate-800 text-slate-400 text-start uppercase font-mono">

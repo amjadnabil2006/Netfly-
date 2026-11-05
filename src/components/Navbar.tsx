@@ -48,23 +48,23 @@ export const Navbar: React.FC<NavbarProps> = ({
   };
 
   return (
-    <header className="sticky top-0 z-40 w-full border-b border-slate-200/80 dark:border-slate-800/80 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md transition-colors duration-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-6">
+    <header className="sticky top-0 z-40 w-full border-b border-slate-200/80 dark:border-slate-800/80 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md transition-colors duration-200">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-2 sm:gap-4">
         
         {/* Zone 1: Brand wordmark */}
         <a 
           href="#home"
           onClick={(e) => { e.preventDefault(); handleNavClick('home'); }}
-          className="flex items-center gap-3 shrink-0 group focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 rounded-lg p-1"
+          className="flex items-center gap-2 sm:gap-3 shrink-0 group focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 rounded-lg p-0.5"
         >
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-500 to-amber-600 dark:from-amber-400 dark:to-amber-600 flex items-center justify-center text-slate-950 font-bold shadow-md shadow-amber-500/20 group-hover:scale-105 transition-transform duration-200">
-            <Ship className="w-5 h-5 text-slate-950" />
+          <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-amber-500 to-amber-600 dark:from-amber-400 dark:to-amber-600 flex items-center justify-center text-slate-950 font-bold shadow-md shadow-amber-500/20 group-hover:scale-105 transition-transform duration-200 shrink-0">
+            <Ship className="w-4 h-4 sm:w-5 sm:h-5 text-slate-950" />
           </div>
-          <div className="flex flex-col">
-            <span className="text-xl font-bold tracking-tight text-slate-950 dark:text-white whitespace-nowrap">
+          <div className="flex flex-col min-w-0">
+            <span className="text-sm sm:text-lg lg:text-xl font-extrabold tracking-tight text-slate-950 dark:text-white truncate max-w-[130px] sm:max-w-none">
               {language === 'ar' ? 'سما كابيتال للاستيراد' : 'Sama Capital Logistics'}
             </span>
-            <span className="text-xs text-amber-600 dark:text-amber-400 font-medium whitespace-nowrap -mt-1 hidden sm:inline">
+            <span className="text-[10px] sm:text-xs text-amber-600 dark:text-amber-400 font-medium whitespace-nowrap -mt-0.5 hidden sm:inline">
               {language === 'ar' ? 'الصين ⇄ اليمن' : 'China ⇄ Yemen Trade'}
             </span>
           </div>
@@ -143,7 +143,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         </nav>
 
         {/* Zone 3: Primary Action & Controls */}
-        <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
+        <div className="flex items-center gap-1 sm:gap-2 shrink-0">
           
           {/* Client Portal launcher button */}
           <button
@@ -160,40 +160,40 @@ export const Navbar: React.FC<NavbarProps> = ({
           <button
             onClick={onOpenAdminPortal}
             title={language === 'ar' ? 'لوحة تحكم وإعدادات الموقع' : 'Site Settings & Control Panel'}
-            className="inline-flex items-center gap-1 sm:gap-1.5 px-2 sm:px-2.5 py-1.5 sm:py-2 rounded-lg text-xs font-bold text-slate-700 dark:text-slate-200 bg-slate-100/90 dark:bg-slate-800/90 hover:text-amber-600 dark:hover:text-amber-400 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors border border-slate-200 dark:border-slate-700 cursor-pointer shadow-xs active:scale-95 shrink-0"
+            className="inline-flex items-center gap-1 px-2 sm:px-2.5 py-1.5 sm:py-2 rounded-lg text-xs font-bold text-slate-700 dark:text-slate-200 bg-slate-100/90 dark:bg-slate-800/90 hover:text-amber-600 dark:hover:text-amber-400 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors border border-slate-200 dark:border-slate-700 cursor-pointer shadow-xs active:scale-95 shrink-0"
             aria-label={t('navAdmin')}
           >
             <Settings className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-amber-500 transition-transform duration-300 hover:rotate-45" />
-            <span>{t('navAdmin')}</span>
+            <span className="hidden sm:inline">{t('navAdmin')}</span>
           </button>
 
           {/* 2. Language Toggle Button (الترجمة) */}
           <button
             onClick={toggleLanguage}
             title={language === 'ar' ? 'التحويل إلى اللغة الإنجليزية (Switch to English)' : 'التحويل إلى العربية (Switch to Arabic)'}
-            className="inline-flex items-center gap-1 sm:gap-1.5 px-2 sm:px-2.5 py-1.5 sm:py-2 rounded-lg text-xs font-bold text-slate-700 dark:text-slate-200 bg-amber-50/80 dark:bg-amber-950/40 hover:bg-amber-100 dark:hover:bg-amber-900/50 hover:text-amber-600 dark:hover:text-amber-400 transition-colors border border-amber-300/70 dark:border-amber-700/70 cursor-pointer active:scale-95 shrink-0"
+            className="inline-flex items-center gap-1 px-2 sm:px-2.5 py-1.5 sm:py-2 rounded-lg text-xs font-bold text-slate-700 dark:text-slate-200 bg-amber-50/80 dark:bg-amber-950/40 hover:bg-amber-100 dark:hover:bg-amber-900/50 hover:text-amber-600 dark:hover:text-amber-400 transition-colors border border-amber-300/70 dark:border-amber-700/70 cursor-pointer active:scale-95 shrink-0"
             aria-label="Toggle Language"
           >
             <Globe className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-amber-600 dark:text-amber-400" />
-            <span className="font-semibold">{language === 'ar' ? 'English' : 'عربي'}</span>
+            <span className="font-bold">{language === 'ar' ? 'EN' : 'عربي'}</span>
           </button>
 
           {/* 3. Theme Toggle Button (الوضع النهاري والليلي) */}
           <button
             onClick={toggleTheme}
             title={theme === 'dark' ? (language === 'ar' ? 'تفعيل الوضع النهاري' : 'Switch to Light Mode') : (language === 'ar' ? 'تفعيل الوضع الليلي' : 'Switch to Dark Mode')}
-            className="inline-flex items-center gap-1 sm:gap-1.5 px-2 sm:px-2.5 py-1.5 sm:py-2 rounded-lg text-xs font-bold text-slate-700 dark:text-slate-200 bg-slate-100/90 dark:bg-slate-800/90 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors border border-slate-200 dark:border-slate-700 cursor-pointer active:scale-95 shrink-0"
+            className="inline-flex items-center gap-1 p-1.5 sm:px-2.5 sm:py-2 rounded-lg text-xs font-bold text-slate-700 dark:text-slate-200 bg-slate-100/90 dark:bg-slate-800/90 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors border border-slate-200 dark:border-slate-700 cursor-pointer active:scale-95 shrink-0"
             aria-label="Toggle Theme"
           >
             {theme === 'dark' ? (
               <>
                 <Sun className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-amber-400" />
-                <span className="text-amber-400 font-semibold">{language === 'ar' ? 'نهاري' : 'Light'}</span>
+                <span className="hidden sm:inline text-amber-400 font-semibold">{language === 'ar' ? 'نهاري' : 'Light'}</span>
               </>
             ) : (
               <>
                 <Moon className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-slate-700 dark:text-slate-200" />
-                <span className="text-slate-700 dark:text-slate-200 font-semibold">{language === 'ar' ? 'ليلي' : 'Dark'}</span>
+                <span className="hidden sm:inline text-slate-700 dark:text-slate-200 font-semibold">{language === 'ar' ? 'ليلي' : 'Dark'}</span>
               </>
             )}
           </button>
@@ -210,7 +210,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="xl:hidden p-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors border border-slate-200 dark:border-slate-800 shrink-0 cursor-pointer"
+            className="xl:hidden p-1.5 sm:p-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors border border-slate-200 dark:border-slate-800 shrink-0 cursor-pointer"
             aria-label="Toggle Menu"
           >
             {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}

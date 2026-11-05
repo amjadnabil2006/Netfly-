@@ -909,7 +909,7 @@ export const INITIAL_SETTINGS: CompanyGeneralSettings = {
   emergencyContact: '+86 138 2210 9944',
   announcementBarTextAr: 'تنبيه ملاحي: فتح باب الحجز لرحلة COSCO المتجهة من ميناء نانشا إلى ميناء عدن (Cut-off: 8 نوفمبر).',
   announcementBarTextEn: 'Liner Notice: Booking open for COSCO sailing from Nansha to Aden Port.',
-  showAnnouncementBar: true
+  showAnnouncementBar: false
 };
 
 export const AUTHORIZED_STAFF_MEMBERS: StaffUser[] = [

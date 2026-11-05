@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { ThemeProvider } from './context/ThemeContext';
-import { AnnouncementBar } from './components/AnnouncementBar';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { MaritimeRoutesSection } from './components/MaritimeRoutesSection';
@@ -19,6 +18,7 @@ import { OrderModal } from './components/OrderModal';
 import { AdminPortal } from './components/AdminPortal';
 import { ClientPortalModal } from './components/ClientPortalModal';
 import { FloatingWhatsApp } from './components/FloatingWhatsApp';
+import { MobileBottomNav } from './components/MobileBottomNav';
 import { Footer } from './components/Footer';
 import { 
   INITIAL_SHIPMENTS, 
@@ -315,14 +315,8 @@ function MainLayout() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 transition-colors duration-200">
+    <div className="min-h-screen flex flex-col bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 transition-colors duration-200 pb-16 md:pb-0">
       
-      {/* Top Announcement Bar (Configurable from Admin CMS) */}
-      <AnnouncementBar
-        settings={settings}
-        onOpenOrderModal={handleOpenOrderModal}
-      />
-
       {/* Top Navbar */}
       <Navbar
         onOpenOrderModal={handleOpenOrderModal}
@@ -346,6 +340,13 @@ function MainLayout() {
 
       {/* Floating Direct WhatsApp Button */}
       <FloatingWhatsApp />
+
+      {/* Mobile Bottom Navigation Bar (Smart Native App Bar for Phones) */}
+      <MobileBottomNav
+        onNavigateSection={handleNavigateSection}
+        onOpenOrderModal={handleOpenOrderModal}
+        onOpenAdminPortal={() => setIsAdminPortalOpen(true)}
+      />
 
       {/* Client Consignment & B/L Account Portal */}
       <ClientPortalModal

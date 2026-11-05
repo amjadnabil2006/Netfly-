@@ -330,23 +330,23 @@ export const AdminPortal: React.FC<AdminPortalProps> = ({
       >
         
         {/* Modal Top Header */}
-        <div className="p-5 sm:p-6 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between bg-slate-950 text-white shrink-0">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-amber-500 text-slate-950 flex items-center justify-center font-bold">
-              <Lock className="w-5 h-5" />
+        <div className="p-3.5 sm:p-6 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between bg-slate-950 text-white shrink-0">
+          <div className="flex items-center gap-2.5 sm:gap-3 min-w-0">
+            <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-amber-500 text-slate-950 flex items-center justify-center font-bold shrink-0">
+              <Lock className="w-4 h-4 sm:w-5 sm:h-5" />
             </div>
-            <div>
-              <h3 className="text-lg font-bold">
-                {language === 'ar' ? 'لوحة تحكم الموقع والعمليات (CMS & Operations)' : 'Site CMS & Operations Portal'}
+            <div className="min-w-0">
+              <h3 className="text-sm sm:text-lg font-bold truncate">
+                {language === 'ar' ? 'لوحة تحكم الموقع والعمليات (CMS)' : 'Site CMS & Operations Portal'}
               </h3>
-              <p className="text-xs text-slate-400">
-                {language === 'ar' ? 'إدارة وتخصيص الأقسام، الشحنات، التسعيرات، وإعدادات الشركة' : 'Manage site sections, active consignments, rates, and corporate settings'}
+              <p className="text-[10px] sm:text-xs text-slate-400 line-clamp-1">
+                {language === 'ar' ? 'إدارة وتخصيص الأقسام، الشحنات، والتسعيرات' : 'Manage site sections, consignments, and rates'}
               </p>
             </div>
           </div>
           <button
             onClick={onClose}
-            className="p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors cursor-pointer"
+            className="p-1.5 sm:p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors cursor-pointer shrink-0"
           >
             <X className="w-5 h-5" />
           </button>

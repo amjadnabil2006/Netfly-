@@ -16,7 +16,7 @@ export const FloatingWhatsApp: React.FC = () => {
   };
 
   return (
-    <div className={`fixed bottom-6 ${isRtl ? 'left-6' : 'right-6'} z-40 flex items-center gap-3`}>
+    <div className={`fixed bottom-20 md:bottom-6 ${isRtl ? 'left-4 sm:left-6' : 'right-4 sm:right-6'} z-30 flex items-center gap-3`}>
       {showTooltip && (
         <div className="hidden sm:flex items-center gap-2 py-2 px-3.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-xl text-xs font-semibold text-slate-800 dark:text-slate-100 animate-in fade-in slide-in-from-bottom-2 duration-300">
           <span>{language === 'ar' ? 'تحدث مع استشاري الشحن عبر واتساب' : 'Chat with Logistics Advisor'}</span>

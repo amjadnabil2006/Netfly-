@@ -255,7 +255,7 @@ export const CalculatorSection: React.FC<CalculatorSectionProps> = ({
                 <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">
                   {t('calcContainerSizeLabel')}
                 </label>
-                <div className="grid grid-cols-3 gap-3">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
                   {[
                     { id: '20ft', label: '20ft Container (~28 CBM)' },
                     { id: '40ft', label: '40ft Standard (~58 CBM)' },
